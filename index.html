@@ -110,6 +110,62 @@
       margin-bottom: 8px;
     }
 
+    .testimonial-box {
+      background: #f5f2ff;
+      border-left: 4px solid #7e57c2;
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial-box .name {
+      font-weight: bold;
+      color: #5e3998;
+      margin-bottom: 12px;
+    }
+
+    .chat-bubble {
+      background: #fff;
+      border-radius: 14px;
+      padding: 15px;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+      position: relative;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .emotion-change {
+      font-size: 1.05rem;
+      text-align: center;
+      margin-top: 10px;
+      color: #6a4fbf;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+    }
+
+    .arrow {
+      margin: 0 10px;
+    }
+
+    .highlight {
+      background: #fff0f6;
+      color: #d63384;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 40px auto;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
     .cta {
       text-align: center;
       margin: 50px 0;
@@ -136,6 +192,12 @@
       text-align: center;
       padding: 30px 20px;
     }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8rem; }
+      .section h2 { font-size: 1.5rem; }
+      .price-card, .testimonial-box { padding: 15px; }
+    }
   </style>
 </head>
 <body>
@@ -146,18 +208,18 @@
   </header>
 
   <div class="teaser-audio">
-  <h2>🎧 감정 몰입 사운드 미리듣기</h2>
-  <audio controls>
-    <source src="seoiyouandme.mp3.mp3" type="audio/mpeg">
-    브라우저가 오디오를 지원하지 않습니다.
-  </audio>
-</div>
+    <h2>🎧 감정 몰입 사운드 미리듣기</h2>
+    <audio controls>
+      <source src="seoiyouandme.mp3.mp3" type="audio/mpeg">
+      브라우저가 오디오를 지원하지 않습니다.
+    </audio>
+  </div>
 
-<div class="gallery">
-  <img src="KakaoTalk_20250708_145603892_01.jpg" alt="상담자 이미지1">
-  <img src="KakaoTalk_20250708_145603892_02.jpg" alt="상담자 이미지2">
-  <img src="KakaoTalk_20250708_145603892_03.jpg" alt="상담자 이미지3">
-</div>
+  <div class="gallery">
+    <img src="KakaoTalk_20250708_145603892_01.jpg" alt="상담자 이미지1">
+    <img src="KakaoTalk_20250708_145603892_02.jpg" alt="상담자 이미지2">
+    <img src="KakaoTalk_20250708_145603892_03.jpg" alt="상담자 이미지3">
+  </div>
 
   <div class="section">
     <h2>📖 감정 시나리오 예시</h2>
@@ -169,7 +231,7 @@
     </p>
   </div>
 
- <div class="testimonial-box">
+  <div class="testimonial-box">
     <div class="name">30대 남 / 김*한</div>
     <div class="chat-bubble message">
       “통화 전엔 그저 무료 상담 사이트처럼 느껴졌는데,<br>
@@ -183,7 +245,25 @@
     </div>
   </div>
 
-  
+  <div class="testimonial-box">
+    <div class="name">30대 남 / 박*우</div>
+    <div class="chat-bubble message">
+      “제가 헤어진 여자친구 목소리가 너무 그리웠는데,<br>
+      이렇게 리얼하게 들려줘서 정말 위로받았어요.<br>
+      또 이용할게요.”
+    </div>
+    <div class="emotion-change">
+      <span><span class="emoji">😔</span> 외로움</span>
+      <span class="arrow">➝</span>
+      <span><span class="emoji">💞</span> 위로받음</span>
+    </div>
+  </div>
+
+  <div class="highlight">
+    👉 “49,000원이 아니라,<br>
+    10년 동안 들고 있었던 마음의 무게를 뺀 셈이었다.”
+  </div>
+
   <div class="section">
     <h2>💡 서비스 구성 & 가격</h2>
 
@@ -208,12 +288,11 @@
     </div>
   </div>
 
- <div class="cta">
-  <button onclick="window.location.href='https://you-and-me-three.vercel.app/signup?id=ceo&fbclid=PAQ0xDSwLZo4lleHRuA2FlbQIxMQABpz8NJL34e3_APxKxp7PhOnElWlLxINoVaRQ7zr8N9vVdRVyzG0Sc4UofZlSw_aem_Oll5hRXMnorHluouPkku7A'">
-    지금 예약하러 가기
-  </button>
-</div>
-
+  <div class="cta">
+    <button onclick="window.location.href='https://you-and-me-three.vercel.app/signup?id=ceo'">
+      지금 예약하러 가기
+    </button>
+  </div>
 
   <footer>
     <p>그녀는 지금, 당신의 감정에 집중하고 있습니다.<br>몰입은 시작되었습니다.</p>
