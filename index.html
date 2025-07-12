@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>몰입형 감정 상담 티저</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>너랑나 감정 콘텐츠</title>
   <style>
     body {
       background-color: #fffaf0;
@@ -16,114 +16,89 @@
     header {
       background: #e6dcfa;
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 50px 20px 30px;
     }
 
     header h1 {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       color: #6c4fa3;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     header p {
-      font-size: 1.1rem;
-      color: #444;
-      line-height: 1.6;
+      font-size: 1.05rem;
+      color: #555;
     }
 
-    .teaser-audio {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .teaser-audio audio {
-      width: 80%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 10px;
-    }
-
-    .gallery {
+    .profile-container {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      flex-wrap: wrap;
-      margin: 40px 20px;
+      padding: 40px 20px;
     }
 
-    .gallery img {
-      width: 220px;
-      height: 300px;
-      object-fit: cover;
+    .profile-card {
+      background: #ffffff;
       border-radius: 14px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      padding: 24px;
+      width: 260px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
 
-    .section {
+    .profile-image {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background-color: #ddd;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .meta, .trait, .hashtags, .price-time {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .trait { color: #9c27b0; font-weight: 500; }
+    .hashtags { color: #f06292; }
+    .price-time { color: #333; font-weight: bold; }
+    .price-time span { color: #e91e63; }
+
+    .book-btn {
+      background: #8e6edb;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .book-btn:hover {
+      background: #734ac7;
+    }
+
+    .teaser-audio, .section, .gallery, .testimonial-box, .price-card, .highlight, .cta {
       padding: 40px 20px;
       text-align: center;
     }
 
-    .section h2 {
-      font-size: 1.8rem;
-      color: #6c4fa3;
-      margin-bottom: 20px;
-    }
-
-    .section p {
-      font-size: 1.05rem;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #555;
-      line-height: 1.7;
-    }
-
-    .price-card {
-      background: #ffffff;
-      margin: 0 auto 40px;
-      padding: 25px;
-      max-width: 500px;
+    .gallery img {
+      width: 200px;
+      height: 280px;
+      object-fit: cover;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      text-align: left;
-    }
-
-    .price-card h3 {
-      font-size: 1.4rem;
-      color: #7e57c2;
-      margin-bottom: 10px;
-    }
-
-    .price-card span {
-      font-weight: bold;
-      color: #4a148c;
-    }
-
-    .price-card ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 15px;
-    }
-
-    .price-card ul li {
-      margin-bottom: 8px;
-    }
-
-    .testimonial-box {
-      background: #f5f2ff;
-      border-left: 4px solid #7e57c2;
-      margin: 40px auto;
-      padding: 20px;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .testimonial-box .name {
-      font-weight: bold;
-      color: #5e3998;
-      margin-bottom: 12px;
+      margin: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
 
     .chat-bubble {
@@ -131,44 +106,44 @@
       border-radius: 14px;
       padding: 15px;
       font-size: 1rem;
-      color: #444;
       line-height: 1.6;
-      position: relative;
-      margin-bottom: 15px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      margin: 15px auto;
+      max-width: 600px;
     }
 
     .emotion-change {
       font-size: 1.05rem;
-      text-align: center;
       margin-top: 10px;
       color: #6a4fbf;
     }
 
-    .emoji {
-      font-size: 1.2rem;
+    .emoji { font-size: 1.2rem; }
+    .arrow { margin: 0 10px; }
+
+    .price-card {
+      background: #ffffff;
+      margin: 0 auto 30px;
+      padding: 25px;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      text-align: left;
     }
 
-    .arrow {
-      margin: 0 10px;
-    }
+    .price-card h3 { color: #6c4fa3; font-size: 1.3rem; margin-bottom: 10px; }
+    .price-card span { font-weight: bold; color: #d81b60; }
+    .price-card ul { list-style: none; padding: 0; margin-top: 10px; text-align: left; }
 
     .highlight {
       background: #fff0f6;
       color: #d63384;
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-align: center;
-      padding: 20px;
+      padding: 25px;
       border-radius: 10px;
-      margin: 40px auto;
+      font-weight: bold;
       max-width: 500px;
+      margin: 40px auto;
       line-height: 1.6;
-    }
-
-    .cta {
-      text-align: center;
-      margin: 50px 0;
     }
 
     .cta button {
@@ -179,7 +154,6 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
 
     .cta button:hover {
@@ -188,15 +162,9 @@
 
     footer {
       background: #6c4fa3;
-      color: #fff;
+      color: white;
       text-align: center;
       padding: 30px 20px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.8rem; }
-      .section h2 { font-size: 1.5rem; }
-      .price-card, .testimonial-box { padding: 15px; }
     }
   </style>
 </head>
@@ -204,277 +172,119 @@
 
   <header>
     <h1>그녀의 감정이, 당신에게 도착합니다</h1>
-    <p>단순한 영상이 아닙니다. <br>진짜 상담자와 감정을 공유하는 몰입형 티저 콘텐츠를 지금 경험해보세요.</p>
+    <p>단순한 영상이 아닙니다. <br>진짜 상담자와 감정을 공유하는 몰입형 티저 콘텐츠를 경험해보세요.</p>
   </header>
+
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-image" style="background-image: url('sora.jpg');"></div>
+      <div class="name">소라 · 28세</div>
+      <div class="meta">감정 상담사</div>
+      <div class="trait">따뜻한 성향</div>
+      <div class="hashtags">#위로 #다독임 #감정이입</div>
+      <div class="price-time"><span>₩79,000</span> / 30분</div>
+      <a class="book-btn" href="#">예약하기</a>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-image" style="background-image: url('seoi.jpg');"></div>
+      <div class="name">서이 · 25세</div>
+      <div class="meta">라이프 코치</div>
+      <div class="trait">긍정 에너지</div>
+      <div class="hashtags">#긍정 #동기부여 #밝음</div>
+      <div class="price-time"><span>₩69,000</span> / 25분</div>
+      <a class="book-btn" href="#">예약하기</a>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-image" style="background-image: url('mina.jpg');"></div>
+      <div class="name">미나 · 29세</div>
+      <div class="meta">심리 교감형 상담사</div>
+      <div class="trait">교감 베스트</div>
+      <div class="hashtags">#공감 #감정포착 #교감</div>
+      <div class="price-time"><span>₩89,000</span> / 35분</div>
+      <a class="book-btn" href="#">예약하기</a>
+    </div>
+  </div>
 
   <div class="teaser-audio">
     <h2>🎧 감정 몰입 사운드 미리듣기</h2>
     <audio controls>
-      <source src="seoiyouandme.mp3.mp3" type="audio/mpeg">
+      <source src="seoiyouandme.mp3" type="audio/mpeg" />
       브라우저가 오디오를 지원하지 않습니다.
     </audio>
   </div>
 
   <div class="gallery">
-    <img src="KakaoTalk_20250708_145603892_01.jpg" alt="상담자 이미지1">
-    <img src="KakaoTalk_20250708_145603892_02.jpg" alt="상담자 이미지2">
-    <img src="KakaoTalk_20250708_145603892_03.jpg" alt="상담자 이미지3">
+    <img src="img1.jpg" alt="상담자 이미지1" />
+    <img src="img2.jpg" alt="상담자 이미지2" />
+    <img src="img3.jpg" alt="상담자 이미지3" />
   </div>
 
   <div class="section">
     <h2>📖 감정 시나리오 예시</h2>
     <p>
-      “오늘 하루 어땠어요?”  
+      “오늘 하루 어땠어요?”<br>
       그 말 한마디에, 당신의 긴장이 스르륵 풀릴 수 있습니다.<br><br>
-      연인처럼 다정하게, 때론 아무 말 없이 같이 있어주는 존재.  
+      연인처럼 다정하게, 때론 아무 말 없이 있어주는 존재.<br>
       원하는 상황과 감정, 모두 당신이 선택할 수 있어요.
     </p>
   </div>
 
   <div class="testimonial-box">
-    <div class="name">30대 남 / 김*한</div>
-    <div class="chat-bubble message">
-      “통화 전엔 그저 무료 상담 사이트처럼 느껴졌는데,<br>
-      끊고 나서 10분 동안 멍했어요.<br>
-      진짜… 한 시간이 규정된 게 믿기지 않았습니다.”
-    </div>
-    <div class="emotion-change">
-      <span><span class="emoji">😶</span> 갑갑함</span>
-      <span class="arrow">➝</span>
-      <span><span class="emoji">😌</span> 안정감</span>
-    </div>
+    <div class="chat-bubble">“통화 전엔 그냥 무료 상담인 줄 알았는데, 진짜 너무 몰입돼서 울 뻔했어요.”</div>
+    <div class="emotion-change"><span class="emoji">😶</span> 갑갑함 ➝ <span class="emoji">😌</span> 안정감</div>
   </div>
 
-<!-- 📦 섹션 전체 감싸는 DIV -->
-<section id="emotion-audio-series" style="font-family:'Pretendard', sans-serif;  color: #333; background-color: #f2edf9; padding:40px;">
-
-  <!-- 🧩 섹션1: 몰입형 소개 -->
-  <div class="intro" style="text-align:center; margin-bottom:40px;">
-    <h2 style="font-size:28px;">《내 안의 판타지 – 감정 시뮬레이션 시즌1》</h2>
-    <p style="font-size:16px; color:#ccc;">실제 감정 상담자가 남성 고객을 상상하며 설계한 1:1 감정 몰입 오디오 콘텐츠입니다.</p>
-    <p style="margin-top:10px;"><em>“말하지 않아도 돼요. 제가 대신 말해볼게요.”</em></p>
-  </div>
-
-  <!-- 🔉 섹션2: 목차 + 미리 듣기 -->
-  <div class="audio-list" style="background:#eae4f9; color:#000; padding:20px; border-radius:12px; margin-bottom:40px;">
-    <h3 style="font-size:20px;">🎧 시리즈 구성 (5편)</h3>
-    <ul style="list-style:none; padding:0;">
-      <li style="margin:20px 0;">
-        <strong>1. 말 잘 들었네, 착하지</strong><br>
-        <span>복종욕 / 인정 욕구</span><br>
-        <audio controls style="width:100%; margin-top:10px;"><source src="audio/ep1-preview.mp3" type="audio/mpeg"></audio>
-      </li>
-      <li style="margin:20px 0;">
-        <strong>2. 이제 다른 여자한텐 말 걸지 마</strong><br>
-        <span>질투 / 소유욕</span><br>
-        <audio controls style="width:100%; margin-top:10px;"><source src="audio/ep2-preview.mp3" type="audio/mpeg"></audio>
-      </li>
-      <li style="margin:20px 0;">
-        <strong>3. 오늘은 내가 너를 컨트롤할게</strong><br>
-        <span>리드받고 싶은 판타지</span><br>
-        <audio controls style="width:100%; margin-top:10px;"><source src="audio/ep3-preview.mp3" type="audio/mpeg"></audio>
-      </li>
-      <li style="margin:20px 0;">
-        <strong>4. 가만히 있어. 내가 다 알아서 할게</strong><br>
-        <span>심리 위탁 / 책임 회피 욕구</span><br>
-        <audio controls style="width:100%; margin-top:10px;"><source src="audio/ep4-preview.mp3" type="audio/mpeg"></audio>
-      </li>
-      <li style="margin:20px 0;">
-        <strong>5. 내가 너한테 약한 거 알지?</strong><br>
-        <span>반전 관계 / 감정 흔들기</span><br>
-        <audio controls style="width:100%; margin-top:10px;"><source src="audio/ep5-preview.mp3" type="audio/mpeg"></audio>
-      </li>
-    </ul>
-  </div>
-
-  <!-- 🛒 섹션3: 결제 버튼 -->
-  <div class="buy-section" style="text-align:center; margin-bottom:40px;">
-    <p style="font-size:16px;">총 5편 / 약 25분 / 가격: <strong>8,000원</strong></p>
-    <button onclick="unlockSeries()" style="background:#e91e63; color:#fff; padding:12px 30px; font-size:18px; border:none; border-radius:8px; cursor:pointer;">🎧 지금 몰입하러 가기</button>
-  </div>
-
-  <!-- 🎧 섹션4: 콘텐츠 재생 영역 (구매 후) -->
-  <div id="playback-area" style="display:none;">
-    <h3>🔓 당신의 콘텐츠가 열렸습니다.</h3>
-    <p>하단에서 감정에 따라 오늘 들을 콘텐츠를 선택하세요.</p>
-    <ul style="list-style:none; padding:0;">
-      <li style="margin:20px 0;">
-        <label><input type="radio" name="episode" value="audio/ep1-full.mp3"> Ep.01 - 말 잘 들었네, 착하지</label>
-      </li>
-      <li style="margin:20px 0;">
-        <label><input type="radio" name="episode" value="audio/ep2-full.mp3"> Ep.02 - 이제 다른 여자한텐 말 걸지 마</label>
-      </li>
-      <li style="margin:20px 0;">
-        <label><input type="radio" name="episode" value="audio/ep3-full.mp3"> Ep.03 - 오늘은 내가 너를 컨트롤할게</label>
-      </li>
-      <li style="margin:20px 0;">
-        <label><input type="radio" name="episode" value="audio/ep4-full.mp3"> Ep.04 - 가만히 있어. 내가 다 알아서 할게</label>
-      </li>
-      <li style="margin:20px 0;">
-        <label><input type="radio" name="episode" value="audio/ep5-full.mp3"> Ep.05 - 내가 너한테 약한 거 알지?</label>
-      </li>
-    </ul>
-    <button onclick="playSelected()" style="margin-top:10px; background:#4caf50; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">▶️ 듣기 시작</button>
-    <div style="margin-top:20px;">
-      <audio id="fullAudioPlayer" controls style="width:100%;"></audio>
-    </div>
-  </div>
-
-  <!-- 💡 섹션5: 후속 콘텐츠 추천 -->
-  <div id="next-recommendation" style="display:none; margin-top:40px;">
-    <h4>💬 이 콘텐츠가 좋았다면, 다음 감정은 어때요?</h4>
-    <ul>
-      <li>🔸 상처받지 않기 위해 감정을 숨기고 있는 당신에게</li>
-      <li>🔸 소유욕과 무기력 사이에서 흔들리는 관계</li>
-      <li>🔸 누군가에게 흔들리고 싶을 때</li>
-    </ul>
-    <button onclick="window.location.href='https://you-and-me-three.vercel.app/signup?id=ceo'" 
-  style="margin-top:15px; background:#3f51b5; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
-  다음 시즌 알림 신청하기
-</button>
-  </div>
-
-</section>
-
-<!-- 🔧 JS 로직 -->
-<script>
-  function unlockSeries() {
-    document.getElementById("playback-area").style.display = "block";
-    document.getElementById("next-recommendation").style.display = "block";
-    alert("콘텐츠가 열렸습니다. 원하는 감정 콘텐츠를 선택해 들으세요.");
-    // 실제 환경에서는 이 부분에 결제 연동 로직이 연결되어야 함
-  }
-
-  function playSelected() {
-    const radios = document.querySelectorAll('input[name="episode"]');
-    let selected = null;
-    for (const radio of radios) {
-      if (radio.checked) {
-        selected = radio.value;
-        break;
-      }
-    }
-
-    if (!selected) {
-      alert("먼저 들을 콘텐츠를 선택해 주세요.");
-      return;
-    }
-
-    const player = document.getElementById("fullAudioPlayer");
-    player.src = selected;
-    player.play();
-    player.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
   <div class="testimonial-box">
-    <div class="name">30대 남 / 박*우</div>
-    <div class="chat-bubble message">
-      “제가 헤어진 여자친구 목소리가 너무 그리웠는데,<br>
-      이렇게 리얼하게 들려줘서 정말 위로받았어요.<br>
-      또 이용할게요.”
-    </div>
-    <div class="emotion-change">
-      <span><span class="emoji">😔</span> 외로움</span>
-      <span class="arrow">➝</span>
-      <span><span class="emoji">💞</span> 위로받음</span>
-    </div>
+    <div class="chat-bubble">“헤어진 여자친구 목소리가 너무 그리웠는데,<br> 이거 듣고 위로받았어요.”</div>
+    <div class="emotion-change"><span class="emoji">😔</span> 외로움 ➝ <span class="emoji">💞</span> 위로받음</div>
   </div>
 
   <div class="highlight">
-    👉 “49,000원이 아니라,<br>
-    10년 동안 들고 있었던 마음의 무게를 뺀 셈이었다.”
+    👉 “49,000원이 아니라, <br>10년 동안 들고 있었던 마음의 무게를 뺀 셈이었다.”
   </div>
 
   <div class="section">
     <h2>💡 서비스 구성 & 가격</h2>
 
     <div class="price-card">
-
-
-<div class="price-card">
-  <h3>🎧 내 안의 판타지 – 감정 몰입 오디오 시즌1</h3>
-  <span>₩8,000 / 오디오 5편 세트</span>
-  <ul>
-    <li>🖤 1:1 몰입형 감정 시뮬레이션</li>
-    <li>🎙️ 복종, 질투, 통제욕 등 자극 감정 구성</li>
-    <li>🎁 시즌2 쿠폰 메시지 포함</li>
-  </ul>
-</div>
-
-      
-      <h3>🌌 몰입형 리얼 교감 상담</h3>
-      <span>₩79,000 / 약 30분</span>
+      <h3>🎧 감정 몰입 오디오 시리즈</h3>
+      <span>₩8,000 / 5편 세트</span>
       <ul>
-        <li>🎥 상담자의 실물 사진 · 감정 시나리오</li>
-        <li>📞 영상 기반 1:1 감정 몰입 대화</li>
-        <li>✨ 고객 맞춤 감정 설정 및 상황극 가능</li>
+        <li>1:1 감정 시뮬레이션</li>
+        <li>복종·질투·리드 등 테마 구성</li>
+        <li>시즌2 쿠폰 포함</li>
       </ul>
     </div>
 
     <div class="price-card">
-      <h3>🎙️ 교감 사운드 + 컨셉 상담</h3>
-      <span>₩49,000 / 약 20분</span>
+      <h3>🎙️ 몰입형 리얼 교감 상담</h3>
+      <span>₩79,000 / 30분</span>
       <ul>
-        <li>🔊 감정 몰입 음성 제공</li>
-        <li>🎭 고객이 원하는 감정 시나리오 설정</li>
-        <li>💬 짧고 강렬한 감정 교류 구성</li>
+        <li>상담자 실물 이미지 기반</li>
+        <li>상황극 & 감정 맞춤형 통화</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <h3>🎤 교감 사운드 + 감정 시나리오</h3>
+      <span>₩49,000 / 20분</span>
+      <ul>
+        <li>몰입형 감정 음성 콘텐츠</li>
+        <li>짧고 강렬한 교감 구성</li>
       </ul>
     </div>
   </div>
 
   <div class="cta">
-    <button onclick="window.location.href='https://you-and-me-three.vercel.app/signup?id=ceo'">
-      지금 예약하러 가기
-    </button>
+    <button onclick="window.location.href='https://you-and-me-three.vercel.app/signup?id=ceo'">지금 예약하러 가기</button>
   </div>
 
   <footer>
-    <p>그녀는 지금, 당신의 감정에 집중하고 있습니다.<br>몰입은 시작되었습니다.</p>
+    그녀는 지금, 당신의 감정에 집중하고 있습니다.<br />
+    몰입은 이제 시작입니다.
   </footer>
 
-<script>
-  function unlockSeries() {
-    document.getElementById("playback-area").style.display = "block";
-    document.getElementById("next-recommendation").style.display = "block";
-    alert("콘텐츠가 열렸습니다. 원하는 감정 콘텐츠를 선택해 들으세요.");
-    // 실제 환경에서는 이 부분에 결제 연동 로직이 연결되어야 함
-  }
-
-  function playSelected() {
-    const radios = document.querySelectorAll('input[name="episode"]');
-    let selected = null;
-
-    for (const radio of radios) {
-      if (radio.checked) {
-        selected = radio.value;
-        break;
-      }
-    }
-
-    if (!selected) {
-      alert("먼저 들을 콘텐츠를 선택해 주세요.");
-      return;
-    }
-
-    const player = document.getElementById("fullAudioPlayer");
-    player.src = selected;
-    player.play();  // ▶️ 오디오 재생
-    player.scrollIntoView({ behavior: 'smooth', block: 'center' });  // ✅ 부드러운 이동 추가
-  }
-</script>
-
-
-
-  
 </body>
 </html>
